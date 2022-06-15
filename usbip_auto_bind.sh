@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+
 allowed_vid_pid=()
 
 while :; do
