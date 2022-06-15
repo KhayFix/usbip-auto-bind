@@ -1,0 +1,15 @@
+[Unit]
+Description=USB_IP Binding
+After=network-online.target usbipd.service
+Wants=network-online.target
+Requires=usbipd.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /etc/usbip/usbip_auto_bind.sh
+RemainAfterExit=yes
+ExecStop=/bin/bash /etc/usbip/usbip_auto_unbind.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
